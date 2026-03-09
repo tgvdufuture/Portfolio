@@ -1,0 +1,258 @@
+/* Responsive Design - Portfolio Granger Timothée */
+
+/* Tablettes et écrans moyens */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 4.5rem;
+  }
+  
+  .about-content {
+    gap: 3rem;
+  }
+
+  .about {
+    margin: 10rem 2.5rem;
+  }
+
+  .skills .grid {
+    gap: 3rem;
+  }
+}
+
+/* Mobiles (Phonés et petites tablettes) */
+@media (max-width: 768px) {
+  /* Désactivation du curseur personnalisé sur mobile pour une meilleure UX */
+  body, * {
+    cursor: auto !important;
+  }
+  
+  .cursor {
+    display: none !important;
+  }
+
+  /* Navigation */
+  nav {
+    padding: 1.25rem 1.5rem;
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  }
+
+  nav ul {
+    gap: 1.2rem;
+  }
+
+  nav ul li {
+    font-size: 0.85rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    top: 6rem;
+    padding: 0 1.5rem;
+    height: auto;
+    min-height: 80vh;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    text-align: center;
+    line-height: 1.1;
+    top: 0;
+    margin-bottom: 2rem;
+  }
+
+  .img-wrapper {
+    bottom: 0;
+    margin-top: -2rem;
+    width: 90%;
+    max-width: 350px;
+    z-index: 0;
+  }
+
+  .img-wrapper img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* On repositionne les textes informatifs pour qu'ils ne flottent pas bizarrement */
+  .hero h2 {
+    position: relative;
+    bottom: 0;
+    margin-top: 2rem;
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    text-align: center;
+  }
+
+  .hero p {
+    position: relative;
+    bottom: 0;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .hero img.fleche {
+    position: relative;
+    bottom: 0;
+    margin-top: 2rem;
+    left: 0;
+    transform: none;
+    width: 2rem;
+  }
+
+  /* About Section */
+  .about {
+    margin: 6rem 1.5rem;
+  }
+
+  .about-content {
+    flex-direction: column; /* Texte en haut, visuel en bas */
+    text-align: left;
+    gap: 4rem;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+
+  .about-text h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about .about-text p {
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
+
+  .about-elements {
+    width: 100%;
+    height: 400px;
+    flex: none;
+  }
+
+  .visual-element {
+    height: 100%;
+  }
+
+  .zone span {
+    font-size: 3.5rem;
+  }
+
+  /* Discovery Card adjustment for mobile */
+  .discovery-card {
+    width: 220px;
+    padding: 1.2rem;
+  }
+
+  /* Projects Section */
+  .selected-works {
+    margin-top: 4rem;
+    padding: 0 1.5rem 4rem 1.5rem;
+  }
+
+  .selected-works h1 {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .works ul li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Skills Section */
+  .skills {
+    margin: 4rem 1.5rem;
+  }
+
+  .skills h1 {
+    font-size: 1.25rem;
+  }
+
+  .skills h3 {
+    font-size: 0.95rem;
+  }
+
+  .skills .grid {
+    flex-direction: column;
+    gap: 3.5rem;
+    margin: 3rem 0;
+  }
+
+  .skills .grid div h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .skills .grid div ul {
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .skill-item img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .skill-name {
+    opacity: 1; /* Toujours visible sur mobile car pas de hover hover */
+    transform: none;
+    font-size: 0.7rem;
+  }
+}
+
+/* Très petits mobiles */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  nav ul {
+    gap: 0.7rem;
+  }
+
+  nav ul li {
+    font-size: 0.75rem;
+  }
+
+  .zone span {
+    font-size: 2.8rem;
+  }
+
+  .about .about-text p {
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 991px) {
+  .works-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .works-list li {
+    font-size: 1.5rem;
+  }
+  
+  .works-preview {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    display: none; /* Hide preview on mobile as we might show project cards instead? */
+  }
+
+  .footer-infos {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+  }
+}

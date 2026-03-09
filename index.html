@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Granger Timothée</title>
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body>
+    <div id="loader">
+      <div class="loader-content">
+        <div class="loader-text">
+          <span class="loader-name">Portfolio</span>
+          <span class="loader-status">CHARGEMENT</span>
+        </div>
+        <div class="loader-bar-container">
+          <div class="loader-bar"></div>
+        </div>
+        <div class="loader-counter">0%</div>
+      </div>
+    </div>
+
+
+    <div class="cursor"></div>
+    <nav>
+      <a href="#hero">G.T.</a>
+      <ul>
+        <li class="hover-underline"><a href="#a-propos">À propos</a></li>
+        <li class="hover-underline"><a href="#selected-works">Projets</a></li>
+        <li class="hover-underline"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero" id="hero">
+      <h1>GRANGER TIMOTHÉE</h1>
+      <h1 class="devant">GRANGER TIMOTHÉE</h1>
+      <div class="img-wrapper">
+        <img src="./src/avatar2.png" alt="Timothée Granger avatar Portfolio">
+      </div>
+      <!--<h2>Creative developer</h2>-->
+      <p>Scroll pour voir plus</p>
+      <img src="./src/swirl-arrow-bottom-icon.webp" alt="fleche tourne" class="fleche">
+    </section>
+
+
+    <section class="about" id="a-propos">
+      <div class="about-content">
+        <div class="about-text">
+            <h1>/01   QUI SUIS-JE ?</h1>
+            <hr>
+            <br>
+            <p>TIMOTHÉE GRANGER</p>
+            <p>WEB DEVELOPER</p>
+            <p>CREATOR OF INTERACTIVE EXPERIENCES.</p>
+            <br>
+            <p>Je conçois des expériences où le code devient un terrain de création.</p>
+            <br>
+            <p>Des interfaces pensées pour être à la fois fluides, intuitives et performantes.</p>
+            <br>
+            <p>Mon approche mélange développement, design et expérimentation.</p>
+            <br>
+            <p>La musique influence aussi ma manière de créer.</p>
+            <br>
+            <p>Inspiré par des artistes comme Don Toliver ou Timbaland,</p>
+            <br>
+            <p>j’explore les sons comme j’explore le code.</p>
+            <hr>
+        </div>
+        <div class="about-elements">
+          <div class="visual-element">
+            <canvas id="waves-canvas"></canvas>
+            <div class="discovery-zones">
+              <div class="zone" data-type="code">
+                <span>CODE</span>
+                <div class="discovery-card">
+                  <div class="card-tag">CREATIVE DEVELOPER</div>
+                  <h3>Creative Developer</h3>
+                  <p>HTML, CSS, GSAP, Creative frontend & systems interactifs.</p>
+                </div>
+              </div>
+              <div class="zone" data-type="music">
+                <span>MUSIQUE</span>
+                <div class="discovery-card">
+                  <div class="card-tag">BEATMAKER</div>
+                  <h3>Beatmaking</h3>
+                  <p>Inspiré par le rap et le sound design.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="selected-works" id="selected-works">
+      <h1>/02 PROJETS SÉLECTIONNÉS</h1>
+      <div class="works-container">
+        <div class="works-list">
+          <ul>
+            <li data-img="./src/Projets/Streamify.jpg" data-link="https://github.com/timotheegranger/Streamify">Site de Streaming</li>
+            <li data-img="./src/Fl Studio Screen.jpg" data-link="https://github.com/timotheegranger/PlaylistGenerator">Générateur intelligent de playlists Spotify</li>
+            <li data-img="./src/Fl Studio Screen.jpg" data-link="https://github.com/timotheegranger/PlaylistGenerator">Générateur intelligent de playlists Spotify</li>
+            <li data-img="./src/Fl Studio Screen.jpg" data-link="https://github.com/timotheegranger/PlaylistGenerator">Générateur intelligent de playlists Spotify</li>
+          </ul>
+        </div>
+        <div class="works-preview">
+          <a href="#" id="project-preview-link" target="_blank" class="preview-img-wrapper">
+            <img src="" alt="Aperçu du projet" id="project-preview-img">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills">
+      <h1>/03 COMPÉTENCES</h1>
+      <h3>Ce que je maîtrise pour créer ces expériences</h3>
+      <div class="grid">
+        <div class="front">
+          <h2>FrontEnd</h2>
+          <ul>
+            <li class="skill-item">
+              <img src="./src/Icons/html5_icon.webp" alt="HTML">
+              <span class="skill-name">HTML</span>
+            </li>
+            <li class="skill-item">
+              <img src="./src/Icons/css-3.svg" alt="CSS">
+              <span class="skill-name">CSS</span>
+            </li>
+            <li class="skill-item">
+              <img src="./src/Icons/javascript-logo-javascript-icon-transparent-free-png.webp" alt="JS">
+              <span class="skill-name">JavaScript</span>
+            </li>            
+            <li class="skill-item">
+              <img src="./src/Icons/react-icon.png" alt="React">
+              <span class="skill-name">React</span>
+            </li>
+          </ul>
+        </div>
+        <div class="back">
+          <h2>BackEnd</h2>
+          <ul>
+            <li class="skill-item">
+              <img src="./src/Icons/php_icon.png" alt="PHP">
+              <span class="skill-name">PHP</span>
+            </li>
+            <li class="skill-item">
+              <img src="./src/Icons/mysql-logo.svg" alt="MYSQL">
+              <span class="skill-name">MySQL</span>
+            </li>
+            <li class="skill-item">
+              <img src="./src/Icons/nodejs_icon.png" alt="NODE.JS">
+              <span class="skill-name">Node.js</span>
+            </li>     
+            <li class="skill-item">
+              <img src="./src/Icons/symfony-icon.webp" alt="symfony">
+              <span class="skill-name">Symfony</span>
+            </li>
+          </ul>
+        </div>
+        <div class="tools">
+          <h2>Outils</h2>
+          <ul>
+            <li class="skill-item">
+              <img src="./src/Icons/git_icon.png" alt="Git">
+              <span class="skill-name">Git</span>
+            </li>
+            <li class="skill-item">
+              <img src="./src/Icons/github_icon.png" alt="Github">
+              <span class="skill-name">GitHub</span>
+            </li>
+            <li class="skill-item">
+              <img src="./src/Icons/figma-icon.webp" alt="Figma">
+              <span class="skill-name">Figma</span>
+            </li>
+            <li class="skill-item">
+              <img src="./src/Icons/postman-icon.png" alt="postman">
+              <span class="skill-name">Postman</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h1>/04 CONTACT</h1>  
+      <div class="contact-container">
+        <div class="contact-header">
+          <p>CRÉONS QUELQUE CHOSE D'INTÉRESSANT</p>
+          
+        </div>      
+      <div class="footer-infos">
+        <p>timotheegranger@gmail.com</p>
+        <p>+33 06 29 32 80 76</p>
+        <p>Développeur d'expériences</p>
+      </div>
+    </section>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
