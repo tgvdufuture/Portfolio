@@ -124,7 +124,7 @@ body{
   top: 0;
   left: 0;
   pointer-events: none; /* Très important pour pouvoir cliquer à travers le rond */
-  z-index: 9999;
+  z-index: 20000;
   transform: translate(-50%, -50%); /* Pour que le rond soit centré sur la souris */
   transition: width 0.3s, height 0.3s, background-color 0.3s; /* Pour les effets au survol */
 }
@@ -442,6 +442,28 @@ nav ul {
   letter-spacing: 0.02em;
 }
 
+.works-list li .work-tag {
+  font-size: 0.6rem;
+  font-family: 'Rubik', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.6rem;
+  background: rgba(19, 41, 62, 0.05);
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-left: 1rem;
+  font-weight: 500;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  font-style: normal;
+}
+
+.works-list li:hover .work-tag {
+  opacity: 1;
+  background: #13293E;
+  color: white !important;
+}
+
 .works-preview {
   flex: 1;
   position: sticky;
@@ -485,6 +507,88 @@ nav ul {
 
 .preview-img-wrapper:hover img {
   transform: scale(1.05);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(19, 41, 62, 0.4);
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.unavailable-modal {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  transform: translateY(30px) scale(0.9);
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+}
+
+.modal-overlay.active .unavailable-modal {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #13293E;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
+
+.unavailable-modal .warning-icon {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.unavailable-modal h3 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 2.5rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.unavailable-modal p {
+  color: rgba(19, 41, 62, 0.6) !important;
+  font-size: 1rem;
+  max-width: 80%;
+  margin: 0 auto 2.5rem auto !important;
+  font-family: 'Rubik', sans-serif;
+  line-height: 1.5;
+}
+
+.close-btn-modal {
+  width: 100%;
+  justify-content: center;
 }
 
 .preview-cta {

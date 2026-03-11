@@ -375,10 +375,17 @@ if (projectItems.length > 0) {
         item.addEventListener('mouseenter', () => {
             const imgSrc = item.getAttribute('data-img');
             const link = item.getAttribute('data-link');
+            const isAvailable = item.getAttribute('data-available') !== 'false';
             
             // On met à jour le contenu
-            if (previewImg) previewImg.src = imgSrc;
-            if (previewLink) previewLink.href = link;
+            if (previewImg) {
+                previewImg.src = imgSrc;
+                previewImg.style.display = 'block'; // On garde l'aperçu visible
+            }
+            if (previewLink) {
+                previewLink.href = isAvailable ? link : '#';
+                previewLink.setAttribute('data-available', isAvailable ? 'true' : 'false');
+            }
             
             // On affiche le preview
             worksPreview.classList.add('active');
@@ -394,11 +401,40 @@ if (projectItems.length > 0) {
             // Optionnel
         });
 
-        item.addEventListener('click', () => {
+        item.addEventListener('click', (e) => {
+            const isAvailable = item.getAttribute('data-available') !== 'false';
+            if (!isAvailable) {
+                e.preventDefault();
+                showUnavailableModal();
+                return;
+            }
             const link = item.getAttribute('data-link');
             if (link && link !== "#") window.open(link, '_blank');
         });
     });
+
+    // --- MODAL LOGIC ---
+    const modalOverlay = document.getElementById('modal-overlay');
+    const modalClose = document.getElementById('modal-close');
+    const closeBtnModal = document.querySelector('.close-btn-modal');
+
+    function showUnavailableModal() {
+        if (modalOverlay) modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Stop scroll
+    }
+
+    function hideUnavailableModal() {
+        if (modalOverlay) modalOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Resume scroll
+    }
+
+    if (modalClose) modalClose.addEventListener('click', hideUnavailableModal);
+    if (closeBtnModal) closeBtnModal.addEventListener('click', hideUnavailableModal);
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) hideUnavailableModal();
+        });
+    }
     
     // On cache le preview si on quitte la zone des projets
     const worksContainer = document.querySelector('.works-container');
@@ -459,13 +495,27 @@ allInteractiveItems.forEach(el => {
     if (!el) return;
     el.addEventListener('mouseenter', () => {
         const isContact = el.closest('.contact-list');
-        gsap.to(cursor, {
-            scale: 2.2,
-            backgroundColor: "rgba(19, 41, 62, 0.05)",
-            backdropFilter: "blur(4px)",
-            duration: 0.3
-        });
-        cursor.innerHTML = `<span style="font-size: 8px; color: #13293E; font-family: Rubik; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; font-weight: 500;">${isContact ? 'CONTACTER' : 'VOIR'}</span>`;
+        const isProjectItem = el.closest('.works-list li');
+        const isProjectPreview = el.id === 'project-preview-link';
+        const isAvailable = (isProjectItem || isProjectPreview) ? (el.getAttribute('data-available') !== 'false') : true;
+
+        if ((isProjectItem || isProjectPreview) && !isAvailable) {
+            gsap.to(cursor, {
+                scale: 2.2, // Back to normal project scale
+                backgroundColor: "rgba(19, 41, 62, 0.05)",
+                backdropFilter: "blur(4px)",
+                duration: 0.3
+            });
+            cursor.innerHTML = `<span style="font-size: 8px; color: #13293E; font-family: Rubik; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; font-weight: 500;">VOIR</span>`;
+        } else {
+            gsap.to(cursor, {
+                scale: 2.2,
+                backgroundColor: "rgba(19, 41, 62, 0.05)",
+                backdropFilter: "blur(4px)",
+                duration: 0.3
+            });
+            cursor.innerHTML = `<span style="font-size: 8px; color: #13293E; font-family: Rubik; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; font-weight: 500;">${isContact ? 'CONTACTER' : 'VOIR'}</span>`;
+        }
     });
     
     el.addEventListener('mouseleave', () => {

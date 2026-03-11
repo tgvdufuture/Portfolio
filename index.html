@@ -98,7 +98,7 @@
         <div class="works-list">
           <ul>
             <li data-img="./src/Projets/Stremify-acceuil.png" data-link="#">Site de Streaming</li>
-            <li data-img="./screen-ytb" data-link="#">Chaîne Youtube de musique</li>
+            <li data-img="./screen-ytb" data-link="#" data-available="false">Chaîne Youtube de musique <span class="work-tag">Bientôt</span></li>
             <li data-img="./screen-streaming-music.png" data-link="#">Site de Streaming musical</li>
         </ul>
         </div>
@@ -193,6 +193,16 @@
         <p>Développeur d'expériences</p>
       </div>
     </section>
+
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="unavailable-modal" id="unavailable-modal">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <div class="warning-icon">⚠️</div>
+        <h3>Aperçu Indisponible</h3>
+        <p>Ce projet n'est pas encore disponible pour une consultation publique.</p>
+        <button class="cta-button close-btn-modal">Compris</button>
+      </div>
+    </div>
 
     <script type="module" src="/src/main.js"></script>
   </body>
