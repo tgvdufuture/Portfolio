@@ -17,6 +17,15 @@
   .skills .grid {
     gap: 3rem;
   }
+
+  .hero .img-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero .img-wrapper img{
+    width: 80%;
+  }
 }
 
 /* Mobiles (Phonés et petites tablettes) */
@@ -51,6 +60,7 @@
     padding: 0 1.5rem;
     height: auto;
     min-height: 80vh;
+    margin-top: 0rem;
   }
 
   .hero h1 {
